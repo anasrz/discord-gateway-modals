@@ -22,7 +22,7 @@ ws.addEventListener("message", function incomming(data) {
   
   var payload = JSON.parse(x); 
   const { t, event, op, d } = payload;
-  switch (op) { // OPCODE 10 GIVES the HEARTBEAT INTERVAL, SO YOU CAN KEEP THE CONNECTION ALIVE 
+  switch (op) {  
 case 10:
       const { heartbeat_interval } = d; setInterval(() => { ws.send(JSON.stringify({ op: 2, d: null })); }, heartbeat_interval); break; } switch (t)
     { 
